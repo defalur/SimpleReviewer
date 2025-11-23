@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf8"/>
+        <title>Review details</title>
+    </head>
+    <body>
+        <h1>{{review.review_title}}</h1>
+        {% if review.comment_set.all %}
+            {% for comment in review.comment_set.all %}
+            <p><b>{{comment.comment_author}}: </b>{{comment.comment_text}}</p>
+            {% endfor %}
+        {% else %}
+        <p>No comments</p>
+        {% endif %}
+    </body>
+</html>
