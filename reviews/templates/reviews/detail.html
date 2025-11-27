@@ -13,5 +13,15 @@
         {% else %}
         <p>No comments</p>
         {% endif %}
+        <form action="{% url 'reviews:comment' review.id %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author"><br><br>
+            <label for="comment">Comment:</label>
+            <input type="text" id="comment" name="comment"><br><br>
+            </fieldset>
+            <input type="submit" value="Send comment">
+        </form>
     </body>
 </html>

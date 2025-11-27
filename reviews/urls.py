@@ -6,4 +6,5 @@ app_name = "reviews"
 urlpatterns = [
         path("", views.index, name="index"),
         path("<int:review_id>/", views.detail, name="detail"),
+        path("<int:review_id>/comment/", views.comment, name="comment"),
 ]
