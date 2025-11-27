@@ -7,4 +7,5 @@ urlpatterns = [
         path("", views.IndexView.as_view(), name="index"),
         path("<int:pk>/", views.DetailView.as_view(), name="detail"),
         path("<int:review_id>/comment/", views.comment, name="comment"),
+        path("create/", views.create, name="create"),
 ]

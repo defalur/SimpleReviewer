@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en-US">
-{% load static %}
-<link rel="stylesheet" href="{% static 'reviews/style.css' %}">
     <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'reviews/style.css' %}">
         <meta charset="utf8"/>
         <title>Reviews index</title>
     </head>
@@ -16,5 +16,6 @@
         {% else %}
         <p>No reviews are currently open</p>
         {% endif %}
+        <a href="{% url 'reviews:create' %}" class="button">New review</a>
     </body>
 </html>

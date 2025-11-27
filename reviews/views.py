@@ -20,3 +20,6 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Review
     template_name = "reviews/detail.html"
+
+def create(request):
+    return render(request, "reviews/create.html")
