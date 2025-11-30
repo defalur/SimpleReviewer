@@ -48,8 +48,10 @@ func main(){
 
     var id uint
     http.HandleFunc("/reviews/{id}/addfile", func(w http.ResponseWriter, r *http.Request) {
+        details := details_list[id]
+
         if r.Method != http.MethodPost {
-            new_file_tmpl.Execute(w, nil)
+            new_file_tmpl.Execute(w, details)
             return
         }
 
@@ -61,7 +63,7 @@ func main(){
         defer file.Close()
 
 
-        details := details_list[id]
+
         details.FilePaths = append(details.FilePaths, handler.Filename)
         details_list[id] = details
         fmt.Println(details, r.FormValue("file"))
