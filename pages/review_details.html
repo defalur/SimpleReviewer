@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<h1>{{.Title}}</h1>
+<ul>
+{{range .FilePaths}}
+    <li>{{.}}</li>
+{{end}}
+</ul>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<h1>{{.Title}}</h1>
+<ul>
+{{range .FilePaths}}
+    <li>{{.}}</li>
+{{end}}
+</ul>
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file"><br/>
+    <input type="submit">
+</form>
+<a href="/reviews/{{.Id}}" class="button">Done</a>
+</body>
+</html>
